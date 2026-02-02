@@ -1,61 +1,116 @@
-<!DOCTYPE html>
-<html lang="zh">
+<!doctype html>
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <title>Video Background</title>
-
-  <style>
-    /* 页面基础 */
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      font-family: Arial, sans-serif;
-    }
-
-    /* 视频背景 */
-    .video-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      z-index: -1;
-    }
-
-    /* 前景内容 */
-    .content {
-      position: relative;
-      z-index: 1;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-align: center;
-      background: rgba(0,0,0,0.3); /* 可删 */
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>黑湖科技 · 智造物料数字化</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
-
-  <!-- 视频背景 -->
-  <video class="video-bg" autoplay muted loop playsinline>
-    <source src="background.mp4" type="video/mp4">
-    你的浏览器不支持视频播放
-  </video>
-
-  <!-- 页面内容 -->
-  <div class="content">
-    <div>
-      <h1>我的网站</h1>
-      <p>这是一个 GitHub Pages 视频背景页面</p>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#">黑湖科技</a>
+      <button id="navToggle" class="nav-toggle" aria-label="菜单">☰</button>
+      <nav id="navMenu" class="nav-menu">
+        <a href="#product">产品</a>
+        <a href="#cases">客户案例</a>
+        <a href="#support">合作与支持</a>
+        <a class="btn btn-outline" href="#demo">申请演示</a>
+      </nav>
     </div>
-  </div>
+  </header>
 
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <div class="badge">管物料 · 管生产 · 管绩效</div>
+          <h1>在制物料统计，降成本，防浪费</h1>
+          <p class="lead">30,000+成长型工厂的共同选择 — 用数据把控物料与生产现场。</p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#demo">申请演示</a>
+            <a class="btn btn-ghost" href="#solution">获取方案</a>
+          </div>
+          <div class="strengths">
+            <div class="s-item"><strong>30,000+</strong><span>超30,000+客户信赖之选</span></div>
+            <div class="s-item"><strong>30+</strong><span>覆盖30+省市</span></div>
+            <div class="s-item"><strong>30+</strong><span>涉及30+细分行业</span></div>
+          </div>
+        </div>
+        <div class="hero-art">
+          <!-- Simple illustrative SVG inspired by reference -->
+          <svg viewBox="0 0 600 400" class="art" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="工厂示意图">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1">
+                <stop offset="0%" stop-color="#e8fffa"/>
+                <stop offset="100%" stop-color="#d9fff3"/>
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="600" height="400" rx="16" fill="url(#g1)" />
+            <g transform="translate(40,40)">
+              <rect x="0" y="20" width="420" height="28" rx="6" fill="#fff" opacity="0.8"/>
+              <g transform="translate(0,80)">
+                <rect x="0" y="0" width="380" height="16" rx="4" fill="#ffffff" opacity="0.9"/>
+                <g fill="#ecfef8">
+                  <rect x="0" y="-36" width="60" height="36" rx="4"/>
+                  <rect x="80" y="-36" width="60" height="36" rx="4"/>
+                  <rect x="160" y="-36" width="60" height="36" rx="4"/>
+                  <rect x="240" y="-36" width="60" height="36" rx="4"/>
+                </g>
+              </g>
+              <g transform="translate(420,20)">
+                <rect x="0" y="0" width="120" height="120" rx="12" fill="#fff" stroke="#bff3e4" stroke-width="3"/>
+                <circle cx="60" cy="36" r="18" fill="#38d39f"/>
+                <rect x="20" y="70" width="80" height="18" rx="6" fill="#eafbf6"/>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section id="solution" class="features container">
+      <h2 class="section-title">我们的产品实力</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>全流程物料可视化</h3>
+          <p>从在制、入库到出库，实时统计物料占用、消耗，支持异常报警。</p>
+        </article>
+        <article class="card">
+          <h3>成本下降方案</h3>
+          <p>基于数据提出精益补料与领料管控，降低原料浪费与异常损耗。</p>
+        </article>
+        <article class="card">
+          <h3>轻量化部署</h3>
+          <p>适配多种工厂场景，支持云端与本地部署，快速上线。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="demo" class="contact container">
+      <div class="contact-inner">
+        <div>
+          <h2>小投入，高收益：为企业创造可量化价值</h2>
+          <p>联系我们获取针对性的实施方案与ROI测算。</p>
+        </div>
+        <form class="contact-form" onsubmit="return false;">
+          <input placeholder="单位/工厂名称" aria-label="单位名称" />
+          <input placeholder="联系人手机号" aria-label="手机号" />
+          <button class="btn btn-primary">立即申请演示</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="float-contact">
+    <a href="#demo">客服在线 点击咨询</a>
+  </aside>
+
+  <footer class="site-footer">
+    <div class="container">© 黑湖科技 · 智造物料数字化解决方案</div>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
